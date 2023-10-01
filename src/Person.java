@@ -26,24 +26,43 @@ public class Person {
     public boolean hasAge() {  //имеет возраст
         return age >= 0;
     }
+
     public boolean hasAddress() {
         return getAddress().isEmpty();
     }
 
-    public String getName() { return name; }
-    public String getSurname() { return surname; }
+    public String getName() {
+        return name;
+    }
 
-      public OptionalInt getAge() { if (age == Integer.parseInt(null)) {
-          return OptionalInt.of(age);} else {
-          return OptionalInt.empty();}
-      } //получить возраст
+    public String getSurname() {
+        return surname;
+    }
+
+    public OptionalInt getAge() {
+        if (age == Integer.parseInt(null)) {
+            return OptionalInt.of(age);
+        } else {
+            return OptionalInt.empty();
+        }
+    } //получить возраст
 
 
-    public String getAddress() { return address;}
+    public String getAddress() {
+        return address;
+    }
 
-    public void setAddress(String address) { this.address = address; }
-    public void happyBirthday() { if (hasAge()) age++; }
-    public PersonBuilder newChildBuilder() { return new PersonBuilder().setSurname(surname).setAddress(address); }
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public void happyBirthday() {
+        if (hasAge()) age++;
+    }
+
+    public PersonBuilder newChildBuilder() {
+        return new PersonBuilder().setSurname(surname).setAddress(address);
+    }
 
     @Override
     public String toString() {
